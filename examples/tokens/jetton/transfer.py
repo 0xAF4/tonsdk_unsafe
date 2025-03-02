@@ -1,6 +1,6 @@
-from tonsdk.contract.token.ft import JettonWallet
-from tonsdk.utils import to_nano, bytes_to_b64str, Address
-from tonsdk.contract.wallet import Wallets, WalletVersionEnum
+from tonsdkunsafe.contract.token.ft import JettonWallet
+from tonsdkunsafe.utils import to_nano, bytes_to_b64str, Address
+from tonsdkunsafe.contract.wallet import Wallets, WalletVersionEnum
 
 
 """your wallet mnemonics"""

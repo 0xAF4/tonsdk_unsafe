@@ -1,10 +1,10 @@
 
 class TonSdkException(Exception):
     """
-    Base class for tonsdk exceptions.
+    Base class for tonsdkunsafe exceptions.
     Subclasses should provide `.default_detail` properties.
     """
-    default_detail = 'TonSdk error.'
+    default_detail = 'tonsdkunsafe error.'
 
     def __init__(self, detail=None):
         self.detail = self.default_detail if detail is None else detail

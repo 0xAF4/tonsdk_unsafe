@@ -1,32 +1,32 @@
-# TONsdk
-[![PyPI](https://img.shields.io/pypi/v/tonsdk?color=blue)](https://pypi.org/project/tonsdk/)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tonsdk)](https://pypi.org/project/tonsdk/)
-[![Downloads](https://static.pepy.tech/badge/tonsdk)](https://pepy.tech/project/tonsdk)
+# tonsdkunsafe
+[![PyPI](https://img.shields.io/pypi/v/tonsdkunsafe?color=blue)](https://pypi.org/project/tonsdkunsafe/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/tonsdkunsafe)](https://pypi.org/project/tonsdkunsafe/)
+[![Downloads](https://static.pepy.tech/badge/tonsdkunsafe)](https://pepy.tech/project/tonsdkunsafe)
 
 ## Description
 This low-level Python library allows you to work with the [TON blockchain](https://ton.org/).
 
 ### Notes
 
-- tonsdk/provider part is dirty.
+- tonsdkunsafe/provider part is dirty.
 
 ## How to install
 
 ```bash
-pip install tonsdk
+pip install tonsdkunsafe
 ```
 
 ## How to use
 
-You can find examples in [examples](https://github.com/tonfactory/tonsdk/tree/master/examples) folder
+You can find examples in [examples](https://github.com/tonfactory/tonsdkunsafe/tree/master/examples) folder
 
 ## General usage examples
 ### Create mnemonic, init wallet class, create external message to deploy the wallet
 
 ```python
-from tonsdk.contract.wallet import WalletVersionEnum, Wallets
-from tonsdk.utils import bytes_to_b64str
-from tonsdk.crypto import mnemonic_new
+from tonsdkunsafe.contract.wallet import WalletVersionEnum, Wallets
+from tonsdkunsafe.utils import bytes_to_b64str
+from tonsdkunsafe.crypto import mnemonic_new
 
 
 wallet_workchain = 0
@@ -54,9 +54,9 @@ Base64boc to deploy the wallet: {}
 
 ### Transfer NFT & Jettons by creating a transfer message from an owner wallet
 ```python
-from tonsdk.contract.token.nft import NFTItem
-from tonsdk.contract.token.ft import JettonWallet
-from tonsdk.utils import Address, to_nano
+from tonsdkunsafe.contract.token.nft import NFTItem
+from tonsdkunsafe.contract.token.ft import JettonWallet
+from tonsdkunsafe.utils import Address, to_nano
 
 body = NFTItem().create_transfer_body(
     Address("New Owner Address")
@@ -98,9 +98,9 @@ import asyncio
 import aiohttp
 from tvm_valuetypes import serialize_tvm_stack
 
-from tonsdk.provider import ToncenterClient, SyncTonlibClient, prepare_address, address_state
-from tonsdk.utils import TonCurrencyEnum, from_nano
-from tonsdk.boc import Cell
+from tonsdkunsafe.provider import ToncenterClient, SyncTonlibClient, prepare_address, address_state
+from tonsdkunsafe.utils import TonCurrencyEnum, from_nano
+from tonsdkunsafe.boc import Cell
 
 
 class AbstractTonClient(ABC):

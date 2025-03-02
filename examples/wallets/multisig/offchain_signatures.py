@@ -1,6 +1,6 @@
-from tonsdk.contract.wallet import MultiSigWallet, MultiSigOrder, MultiSigOrderBuilder
-from tonsdk.crypto import mnemonic_new, mnemonic_to_wallet_key
-from tonsdk.utils import Address, bytes_to_b64str, b64str_to_bytes, to_nano
+from tonsdkunsafe.contract.wallet import MultiSigWallet, MultiSigOrder, MultiSigOrderBuilder
+from tonsdkunsafe.crypto import mnemonic_new, mnemonic_to_wallet_key
+from tonsdkunsafe.utils import Address, bytes_to_b64str, b64str_to_bytes, to_nano
 
 
 """import or generate mnemonics"""
@@ -23,7 +23,7 @@ wallet = MultiSigWallet(public_keys=[pub_k0, pub_k1, pub_k2], k=2, wallet_id=0)
 
 """create order and add message"""
 order1 = MultiSigOrderBuilder(wallet.options["wallet_id"])
-order1.add_message(to_addr='EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N', amount=to_nano('0.01', 'ton'), send_mode=3, payload='hello from python tonsdk')
+order1.add_message(to_addr='EQCD39VS5jcptHL8vMjEXrzGaRcCVYto7HUn4bpAOg8xqB2N', amount=to_nano('0.01', 'ton'), send_mode=3, payload='hello from python tonsdkunsafe')
 
 
 """build and sign order with all required priv keys"""

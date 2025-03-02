@@ -1,5 +1,5 @@
-from tonsdk.contract.wallet import WalletVersionEnum, Wallets
-from tonsdk.utils import Address, bytes_to_b64str, b64str_to_bytes, to_nano
+from tonsdkunsafe.contract.wallet import WalletVersionEnum, Wallets
+from tonsdkunsafe.utils import Address, bytes_to_b64str, b64str_to_bytes, to_nano
 
 mnemonics = []
 _mnemonics, _pub_k, _priv_k, wallet = Wallets.from_mnemonics(

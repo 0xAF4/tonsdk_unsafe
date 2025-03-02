@@ -1,6 +1,6 @@
-from tonsdk.crypto import mnemonic_new
-from tonsdk.contract.wallet import Wallets, WalletVersionEnum
-from tonsdk.utils import to_nano, bytes_to_b64str
+from tonsdkunsafe.crypto import mnemonic_new
+from tonsdkunsafe.contract.wallet import Wallets, WalletVersionEnum
+from tonsdkunsafe.utils import to_nano, bytes_to_b64str
 
 
 mnemonics = ['broken', 'decade', 'unit', 'bird', 'enrich', 'great', 'nurse', 'offer', 'rescue',

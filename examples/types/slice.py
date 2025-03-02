@@ -1,5 +1,5 @@
-from tonsdk.boc import Slice, begin_cell
-from tonsdk.utils import Address
+from tonsdkunsafe.boc import Slice, begin_cell
+from tonsdkunsafe.utils import Address
 
 cell = begin_cell()\
     .store_uint(4, 32)\
