@@ -14,10 +14,13 @@ def mnemonic_is_valid(mnemo_words: List[str]) -> bool:
 
 
 def mnemonic_to_entropy(mnemo_words: List[str], password: Optional[str] = None):
-    # TODO: implement password
-    sign = hmac.new((" ".join(mnemo_words)).encode(
-        'utf-8'), bytes(0), hashlib.sha512).digest()
-    return sign
+    if password == "" or password == None:
+        sign = hmac.new((" ".join(mnemo_words)).encode(
+            'utf-8'), bytes(0), hashlib.sha512).digest()
+        return sign
+    else:
+        mnemonic = " ".join(mnemo_words)
+        return hashlib.pbkdf2_hmac("sha512", mnemonic.encode("utf-8"), password.encode("utf-8"), PBKDF_ITERATIONS)
 
 
 def mnemonic_to_seed(mnemo_words: List[str], seed: str, password: Optional[str] = None):
