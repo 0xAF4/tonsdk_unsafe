@@ -52,14 +52,14 @@ class Wallets:
 
     @classmethod
     def from_mnemonics(cls, mnemonics: List[str], version: WalletVersionEnum = default_version,
-                       workchain: int = 0, **kwargs) -> Tuple[List[str], bytes, bytes, WalletContract]:
+                       workchain: int = 0, password: Optional[str] = None, **kwargs) -> Tuple[List[str], bytes, bytes, WalletContract]:
         """
         :rtype: (List[str](mnemonics), bytes(public_key), bytes(private_key), WalletContract(wallet))
         """
-        if not mnemonic_is_valid(mnemonics):
-            raise InvalidMnemonicsError()
+        # if not mnemonic_is_valid(mnemonics):
+        #     raise InvalidMnemonicsError()
 
-        pub_k, priv_k = mnemonic_to_wallet_key(mnemonics)
+        pub_k, priv_k = mnemonic_to_wallet_key(mnemonics, password)
         wallet = cls.ALL[version](
             public_key=pub_k, private_key=priv_k, wc=workchain, **kwargs)
 
